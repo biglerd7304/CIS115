@@ -93,7 +93,15 @@ def main():
     lt(bob)
     pd(bob)
     circle(bob, radius)
-
+    pu(bob)
+    fd(bob, -radius)
+    pd(bob)
+    square(bob, radius*2)
+    pu(bob)
+    fd(bob, radius)
+    pd(bob)
+    polygon(bob, 3, radius)
+    
     wait_for_user()
 
 # the following condition checks whether we are
