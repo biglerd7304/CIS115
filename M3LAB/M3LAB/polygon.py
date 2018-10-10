@@ -92,15 +92,29 @@ def main():
     fd(bob, radius)
     lt(bob)
     pd(bob)
+    
     circle(bob, radius)
     pu(bob)
     fd(bob, -radius)
     pd(bob)
+    
     square(bob, radius*2)
     pu(bob)
     fd(bob, radius)
     pd(bob)
-    polygon(bob, 3, radius)
+
+    bob.lt(60)
+    polygon(bob, 3, radius*(1+(35/48)))
+    pu(bob)
+    bob.rt(60)
+    lt(bob)
+    fd(bob, radius)
+    rt(bob)
+    fd(bob, radius/2)
+    lt(bob)
+    pd(bob)
+    circle(bob, radius/2)
+
     
     wait_for_user()
 
