@@ -1,0 +1,98 @@
+<html><!-- this is a HTML comment which will be ignored by the browser --><!-- this is different from a JavaScript comment as seen below --><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+		<!-- information in the head tags is used by the browser,
+		     but isn't actually shown in the page itself -->
+		<title>Hangman by Daniel Bigler</title>
+	</head>
+
+	<body>
+		<!-- everything within the body tags consists of information actually
+		     shown in the page itself -->
+		<h1>Hangman!</h1>
+
+		<p>This is a paragraph.</p>
+
+
+		<script>
+			// Create an array of words
+			var words = [
+				"javascript",
+				"monkey",
+				"amazing",
+				"pancake",
+				"dog",
+				"jazz",
+				"computer",
+				"planet",
+				"apple",
+				"pinecone",
+				"document",
+				"skateboard",
+				"wave",
+				"television",
+				"possible",
+				"orange",
+				"dinosaur",
+				"window",
+				"floor",
+				"fire",
+				"alligator",
+				"ghost",
+				"monster",
+				"hipster",
+				"lemon",
+				"star",
+				"kingdom",
+				"jacket",
+				"bookbag",
+				"laptop",
+				"put",
+				"respect",
+				"breakfast",
+				"birth",
+				"eleven",
+				"still",
+				"moon"
+			];
+
+			// Pick a random word
+			var word = words[Math.floor(Math.random() * words.length)];
+
+			// Set up the answer array
+			var answerArray = [];
+			for (var i = 0; i < word.length; i++) {
+				answerArray[i] = "_";
+			}
+
+			var remainingLetters = word.length;
+
+			// The game loop
+			while (remainingLetters > 0) {
+			// Game code goes here
+     		// Show the player their progress
+     		alert(answerArray.join(" "));
+     		// Take input from the player
+     		var guess = prompt("Guess a letter, or click Cancel to stop playing.")
+     		if (guess === null) {
+     			break;
+     		}	else if (guess.length !== 1) {
+     			alert("Please enter a single letter.");
+     		}	else {
+     			// Update the game state with the guess
+     			for (var j = 0; j < word.length; j++) {
+     				if (word[j] === guess) {
+     					answerArray[j] = guess;
+     					remainingLetters--;
+     				}
+     			}
+     		}
+     		// Update answerArray and remainingLetters for every correct guess
+ 		}
+
+ 		// Show the answer and congratulate the player
+ 		alert(answerArray.join(" "));
+ 		alert("Good job! The answer was " + word);
+		</script>
+
+	
+</body></html>
